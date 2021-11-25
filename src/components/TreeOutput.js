@@ -12,7 +12,7 @@ const TreeOutput = () => {
         name="tree"
         id="tree"
         cols="50"
-        rows="60"></textarea>
+        rows="50"></textarea>
     </div>
   );
 };

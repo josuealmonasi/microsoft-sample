@@ -12,7 +12,7 @@ const FileReaderInput = () => {
     const parsed = JSON.parse(result);
     const { length } = parsed;
     settextToTree(length ? parsed : '');
-    setTree(arrayToTree(parsed));
+    setTree(length ? arrayToTree(parsed) : 'Invalid File!');
   };
 
   const handleFile = (file) => {

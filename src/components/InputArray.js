@@ -31,6 +31,7 @@ const InputArray = () => {
       <input
         value={isFile ? JSON.stringify(textToTree) : arrayAsInput}
         onChange={handleOnChangeInput}
+        onKeyPress={(e) => e.key === 'Enter' && handleFetch()}
         type="text"
         name="array"
         id="array"
