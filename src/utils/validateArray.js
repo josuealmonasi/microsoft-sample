@@ -4,7 +4,6 @@ export const validateInput = (arr) => {
   }
   while (arr.length < 3) {
     arr.push(null);
-    console.log(arr);
   }
   return arr[0] && validateInput(arr[1]) && validateInput(arr[2]);
 };
