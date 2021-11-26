@@ -7,7 +7,8 @@ const style = {
 };
 
 const squareStyle = {
-  border: 'solid 1px black',
+  border: 'solid 2px #ffbbff',
+  background: '#fff6c7',
   height: 'fit-content',
   display: 'flex',
   flexDirection: 'column',
