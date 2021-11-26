@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
 import { arrayToTree } from '../utils/arrayToTree';
@@ -8,12 +8,14 @@ const InputArray = () => {
   const [arrayAsInput, setarrayAsInput] = useState(textToTree);
   const [error, seterror] = useState(false);
 
+  useMemo(() => setarrayAsInput(textToTree), [textToTree]);
+
   const handleFetch = () => {
     if (isFile) {
       return;
     }
     try {
-      settextToTree(JSON.parse(arrayAsInput));
+      settextToTree(arrayAsInput);
       setTree(arrayToTree(JSON.parse(arrayAsInput)));
       seterror(false);
     } catch (err) {

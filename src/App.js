@@ -4,6 +4,7 @@ import { AppContext } from './AppContext';
 import './App.css';
 import InputArray from './components/InputArray';
 import TreeOutput from './components/TreeOutput';
+import DrawTree from './components/DrawTree';
 
 const App = () => {
   const [textToTree, settextToTree] = useState('');
@@ -20,6 +21,7 @@ const App = () => {
         </p>
         <FileReader />
         <TreeOutput />
+        <DrawTree />
       </AppContext.Provider>
     </div>
   );
