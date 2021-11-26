@@ -1,5 +1,6 @@
-import { useContext } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import { AppContext } from '../AppContext';
+import { findSubTree } from '../utils/findSmallestSubtree';
 
 const style = {
   display: 'flex',
@@ -31,20 +32,31 @@ const rootStyle = {
 
 const DrawTree = () => {
   const { tree } = useContext(AppContext);
+  const [isSmallestSubTree, setIsSmallestSubTree] = useState(false);
+  useMemo(() => setIsSmallestSubTree(findSubTree(tree)), [tree]);
 
-  const square = (node) => {
+  const square = (node, level = 0) => {
+    let currentLevel = level + 1;
     if (node === null) {
       return <div style={squareStyle}>Null</div>;
     }
     return (
       <div style={style}>
-        <div style={squareStyle}>
+        <div
+          style={{
+            ...squareStyle,
+            borderColor:
+              `${isSmallestSubTree.id}-${isSmallestSubTree.level}` === `${node.id}-${currentLevel}`
+                ? '#01c57c'
+                : '#ffbbff'
+          }}>
           {node.hasOwnProperty('id') && <div style={rootStyle}>{node.id}</div>}
           <div style={leavesStyle}>
-            {node.hasOwnProperty('left') && square(node.left)}
-            {node.hasOwnProperty('right') && square(node.right)}
+            {node.hasOwnProperty('left') && square(node.left, currentLevel)}
+            {node.hasOwnProperty('right') && square(node.right, currentLevel)}
           </div>
         </div>
+        <small style={{ color: '#bebebe' }}>{`Level ${currentLevel}`}</small>
       </div>
     );
   };
