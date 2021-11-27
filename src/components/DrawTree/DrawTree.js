@@ -2,30 +2,7 @@ import { useContext, useMemo, useState } from 'react';
 import { AppContext } from '../../AppContext';
 import { INVALID_FILE } from '../../utils/appConstants';
 import { findSubTree } from '../../utils/findSmallestSubtree';
-import { TreeContainer } from './styled';
-
-const squareStyle = {
-  border: 'solid 2px #ffbbff',
-  background: '#fff6c7',
-  height: 'fit-content',
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  padding: '2px',
-  margin: '2px'
-};
-
-const leavesStyle = {
-  display: 'flex',
-  justifyContent: 'center',
-  minWidth: '70px'
-};
-const rootStyle = {
-  height: '100px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center'
-};
+import { Info, Tree, TreeContainer, TreeLeave, TreeRoot } from './styled';
 
 const DrawTree = () => {
   const { tree } = useContext(AppContext);
@@ -35,25 +12,21 @@ const DrawTree = () => {
   const square = (node, level = 0) => {
     let currentLevel = level + 1;
     if (node === null) {
-      return <div style={squareStyle}>Null</div>;
+      return <Tree>Null</Tree>;
     }
     return (
       <TreeContainer>
-        <div
-          style={{
-            ...squareStyle,
-            borderColor:
-              `${isSmallestSubTree.id}-${isSmallestSubTree.level}` === `${node.id}-${currentLevel}`
-                ? '#01c57c'
-                : '#ffbbff'
-          }}>
-          {node.hasOwnProperty('id') && <div style={rootStyle}>{node.id}</div>}
-          <div style={leavesStyle}>
+        <Tree
+          isDeepest={
+            `${isSmallestSubTree.id}-${isSmallestSubTree.level}` === `${node.id}-${currentLevel}`
+          }>
+          {node.hasOwnProperty('id') && <TreeRoot>{node.id}</TreeRoot>}
+          <TreeLeave>
             {node.hasOwnProperty('left') && square(node.left, currentLevel)}
             {node.hasOwnProperty('right') && square(node.right, currentLevel)}
-          </div>
-        </div>
-        <small style={{ color: '#bebebe' }}>{`Level ${currentLevel}`}</small>
+          </TreeLeave>
+        </Tree>
+        <Info>{`Level ${currentLevel}`}</Info>
       </TreeContainer>
     );
   };
