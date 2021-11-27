@@ -17,20 +17,18 @@ const TreeOutput = () => {
   };
 
   return (
-    <div>
+    <>
       {tree !== '' && (
-        <>
-          <TreeAsText
-            value={JSON.stringify(tree, null, 2)}
-            onChange={handleOnChange}
-            name="tree"
-            id="tree"
-            cols="40"
-            rows="30"
-          />
-        </>
+        <TreeAsText
+          value={JSON.stringify(tree, null, 2)}
+          onChange={handleOnChange}
+          name="tree"
+          id="tree"
+          cols="40"
+          rows="30"
+        />
       )}
-    </div>
+    </>
   );
 };
 
