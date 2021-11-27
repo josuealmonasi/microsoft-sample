@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { AppContext } from '../../AppContext';
 import { treeToArray } from '../../utils/treeToArray';
+import { TreeAsText } from './styled';
 
 const TreeOutput = () => {
   const { settextToTree, tree, setTree } = useContext(AppContext);
@@ -19,14 +20,13 @@ const TreeOutput = () => {
     <div>
       {tree !== '' && (
         <>
-          <p>Tree Text</p>
-          <textarea
+          <TreeAsText
             value={JSON.stringify(tree, null, 2)}
             onChange={handleOnChange}
             name="tree"
             id="tree"
-            cols="50"
-            rows="50"
+            cols="40"
+            rows="30"
           />
         </>
       )}

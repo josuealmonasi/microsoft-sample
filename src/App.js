@@ -5,6 +5,7 @@ import './App.css';
 import InputArray from './components/InputArray/InputArray';
 import TreeOutput from './components/TreeOutput/TreeOutput';
 import DrawTree from './components/DrawTree/DrawTree';
+import Tabs from './components/Tabs/Tabs';
 
 const App = () => {
   const [textToTree, settextToTree] = useState('');
@@ -22,8 +23,14 @@ const App = () => {
           <span>or</span>
         </p>
         <FileReader />
-        <TreeOutput />
-        <DrawTree />
+        {tree !== '' && (
+          <>
+            <Tabs>
+              <TreeOutput title={'Tree as text'} />
+              <DrawTree title={'Drawn Tree'} />
+            </Tabs>
+          </>
+        )}
       </AppContext.Provider>
     </div>
   );
