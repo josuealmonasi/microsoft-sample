@@ -30,12 +30,9 @@ const InputArray = () => {
     try {
       setisFile(false);
       setarrayAsInput(e.target.value);
-      console.log(JSON.parse(e.target.value).length);
       const parsedInput = JSON.parse(e.target.value);
-      console.log(parsedInput);
       setError(!validateInput(parsedInput));
     } catch (err) {
-      //console.log(err);
       setError(!!err);
     }
   };
