@@ -41,8 +41,8 @@ export const OverlayContent = styled.div`
   border-radius: 20px;
   padding: 25px;
   box-sizing: border-box;
-  width: 50vw;
-  height: 50vh;
+  width: 70vw;
+  height: 55vh;
   background: ${OVERLAY_CONTENT_BG_COLOR};
   top: 0;
   left: 0;
@@ -52,4 +52,8 @@ export const CodeExample = styled.p`
   background: whitesmoke;
   padding: 10px;
   border-radius: 10px;
+`;
+
+export const OverLayScroll = styled.div`
+  overflow: scroll;
 `;

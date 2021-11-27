@@ -1,10 +1,10 @@
-import { CodeExample, HelpButton, Overlay, OverlayContent } from './styled';
+import { CodeExample, HelpButton, Overlay, OverlayContent, OverLayScroll } from './styled';
 
 const HelpOverlay = ({ onClose }) => {
   return (
     <Overlay>
       <OverlayContent>
-        <div>
+        <OverLayScroll>
           <h2>Example:</h2>
           <p>A valid input is tree that follows this format</p>
           <CodeExample>
@@ -40,7 +40,7 @@ const HelpOverlay = ({ onClose }) => {
               </ul>
             </code>
           </CodeExample>
-        </div>
+        </OverLayScroll>
         <HelpButton onClick={onClose}>Accept</HelpButton>
       </OverlayContent>
     </Overlay>
