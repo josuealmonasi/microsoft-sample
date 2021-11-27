@@ -8,6 +8,7 @@ export const TreeContainer = styled.div`
 
 export const Tree = styled.div`
   border: solid 2px ${({ isDeepest }) => (!isDeepest ? NODE_BORDER : DEEPEST_NODE)};
+  border-radius: 8px;
   background: ${NODE_BG_COLOR};
   height: fit-content;
   display: flex;

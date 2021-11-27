@@ -17,15 +17,19 @@ const TreeOutput = () => {
 
   return (
     <div>
-      <p>Tree Text</p>
-      <textarea
-        value={JSON.stringify(tree, null, 2)}
-        onChange={handleOnChange}
-        name="tree"
-        id="tree"
-        cols="50"
-        rows="50"
-      />
+      {tree !== '' && (
+        <>
+          <p>Tree Text</p>
+          <textarea
+            value={JSON.stringify(tree, null, 2)}
+            onChange={handleOnChange}
+            name="tree"
+            id="tree"
+            cols="50"
+            rows="50"
+          />
+        </>
+      )}
     </div>
   );
 };
