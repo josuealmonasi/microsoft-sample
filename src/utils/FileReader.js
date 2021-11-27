@@ -1,18 +1,25 @@
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
+import { INVALID_FILE } from './appConstants';
 import { arrayToTree } from './arrayToTree';
+import { validateInput } from './validateArray';
 
 const FileReaderInput = () => {
   let fileReader;
 
-  const { settextToTree, setisFile, setTree } = useContext(AppContext);
+  const { settextToTree, setisFile, setTree, setError } = useContext(AppContext);
 
   const onLoadEded = () => {
-    const { result } = fileReader;
-    const parsed = JSON.parse(result);
-    const { length } = parsed;
-    settextToTree(length ? parsed : '');
-    setTree(length ? arrayToTree(parsed) : 'Invalid File!');
+    try {
+      const { result } = fileReader;
+      const parsed = JSON.parse(result);
+      const parseError = !validateInput(parsed) || !parsed.hasOwnProperty('length');
+      settextToTree(!parseError ? parsed : '');
+      setTree(!parseError ? arrayToTree(parsed) : INVALID_FILE);
+      setError(parseError);
+    } catch (err) {
+      setError(!!err);
+    }
   };
 
   const handleFile = (file) => {

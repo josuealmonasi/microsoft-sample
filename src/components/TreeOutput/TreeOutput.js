@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { AppContext } from '../AppContext';
-import { treeToArray } from '../utils/treeToArray';
+import { AppContext } from '../../AppContext';
+import { treeToArray } from '../../utils/treeToArray';
 
 const TreeOutput = () => {
   const { settextToTree, tree, setTree } = useContext(AppContext);

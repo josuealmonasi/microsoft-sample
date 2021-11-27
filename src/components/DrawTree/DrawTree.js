@@ -1,11 +1,8 @@
 import { useContext, useMemo, useState } from 'react';
-import { AppContext } from '../AppContext';
-import { findSubTree } from '../utils/findSmallestSubtree';
-
-const style = {
-  display: 'flex',
-  margin: 'auto'
-};
+import { AppContext } from '../../AppContext';
+import { INVALID_FILE } from '../../utils/appConstants';
+import { findSubTree } from '../../utils/findSmallestSubtree';
+import { TreeContainer } from './styled';
 
 const squareStyle = {
   border: 'solid 2px #ffbbff',
@@ -41,7 +38,7 @@ const DrawTree = () => {
       return <div style={squareStyle}>Null</div>;
     }
     return (
-      <div style={style}>
+      <TreeContainer>
         <div
           style={{
             ...squareStyle,
@@ -57,11 +54,11 @@ const DrawTree = () => {
           </div>
         </div>
         <small style={{ color: '#bebebe' }}>{`Level ${currentLevel}`}</small>
-      </div>
+      </TreeContainer>
     );
   };
 
-  return <div style={style}>{tree !== '' && square(tree)}</div>;
+  return <TreeContainer>{tree !== '' && tree !== INVALID_FILE && square(tree)}</TreeContainer>;
 };
 
 export default DrawTree;

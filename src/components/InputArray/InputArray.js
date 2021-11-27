@@ -1,31 +1,39 @@
 import { useMemo, useState } from 'react';
 import { useContext } from 'react';
-import { AppContext } from '../AppContext';
-import { arrayToTree } from '../utils/arrayToTree';
+import { AppContext } from '../../AppContext';
+import { FETCH_BUTTON } from '../../utils/appConstants';
+import { arrayToTree } from '../../utils/arrayToTree';
+import { validateInput } from '../../utils/validateArray';
+import ErrorMessage from '../Error/ErrorMessage';
 
 const InputArray = () => {
-  const { textToTree, settextToTree, setisFile, isFile, setTree } = useContext(AppContext);
+  const { textToTree, settextToTree, setisFile, isFile, setTree, error, setError } =
+    useContext(AppContext);
   const [arrayAsInput, setarrayAsInput] = useState(textToTree);
-  const [error, seterror] = useState(false);
 
   useMemo(() => setarrayAsInput(textToTree), [textToTree]);
 
   const handleFetch = () => {
-    if (isFile) {
+    if (isFile || error) {
       return;
     }
     try {
       settextToTree(arrayAsInput);
       setTree(arrayToTree(JSON.parse(arrayAsInput)));
-      seterror(false);
+      setError(false);
     } catch (err) {
-      seterror(err);
+      setError(true);
     }
   };
 
   const handleOnChangeInput = (e) => {
     setisFile(false);
     setarrayAsInput(e.target.value);
+    try {
+      setError(!validateInput(JSON.parse(e.target.value)));
+    } catch (error) {
+      setError(true);
+    }
   };
 
   return (
@@ -38,9 +46,11 @@ const InputArray = () => {
         name="array"
         id="array"
       />
-      <button onClick={handleFetch}>Fetch</button>
+      <button disabled={error} onClick={handleFetch}>
+        {FETCH_BUTTON}
+      </button>
       <br />
-      {error && <span>Please enter an valid array!</span>}
+      {error && <ErrorMessage />}
     </div>
   );
 };
