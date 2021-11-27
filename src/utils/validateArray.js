@@ -2,6 +2,9 @@ export const validateInput = (arr) => {
   if (arr === null || arr === undefined) {
     return true;
   }
+  if (arr.length > 3) {
+    return false;
+  }
   while (arr.length < 3) {
     arr.push(null);
   }
