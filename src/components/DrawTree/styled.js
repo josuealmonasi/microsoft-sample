@@ -14,18 +14,16 @@ export const Tree = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2px;
-  margin: 2px;
+  padding: 4px;
+  margin: 4px;
 `;
 
 export const TreeLeave = styled.div`
   display: flex;
   justify-content: center;
-  min-width: 70px;
 `;
 
 export const TreeRoot = styled.div`
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
