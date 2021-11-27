@@ -7,6 +7,7 @@ export const TabsContainer = styled.div`
   width: 80%;
   margin: 40px auto;
   padding: 20px;
+  box-sizing: border-box;
   @media (max-width: 768px) {
     width: 100%;
     max-height: 70vh;
