@@ -1,13 +1,13 @@
 export const findHeight = (tree) => {
-  if (tree === null) return 0;
+  if (tree === null || tree === undefined) return 0;
   if (tree?.left === null && tree?.right === null) return 1;
   return Math.max(findHeight(tree?.left || null), findHeight(tree?.right || null)) + 1;
 };
 
 export const findSubTree = (root, prevNode) => {
   if (root === null) return prevNode;
-  let rightHeight = findHeight(root.right);
-  let leftHeight = findHeight(root.left);
+  let rightHeight = findHeight(root?.right);
+  let leftHeight = findHeight(root?.left);
   if (leftHeight > rightHeight) {
     prevNode = findSubTree(root.left, prevNode);
   } else if (rightHeight > leftHeight) {
