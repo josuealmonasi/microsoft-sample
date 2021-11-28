@@ -48,10 +48,11 @@ export const OverlayContent = styled.div`
   left: 0;
 `;
 
-export const CodeExample = styled.p`
+export const CodeExample = styled.div`
   background: whitesmoke;
   padding: 10px;
   border-radius: 10px;
+  margin: 10px 0;
 `;
 
 export const OverLayScroll = styled.div`

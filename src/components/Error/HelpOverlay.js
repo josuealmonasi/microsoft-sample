@@ -6,7 +6,7 @@ const HelpOverlay = ({ onClose }) => {
       <OverlayContent>
         <OverLayScroll>
           <h2>Example:</h2>
-          <p>A valid input is tree that follows this format</p>
+          <span>A valid input is tree that follows this format</span>
           <CodeExample>
             <code>
               Node = [value, Node | null, Node | null]
