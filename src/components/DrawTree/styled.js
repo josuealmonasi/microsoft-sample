@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { DEEPEST_NODE, INFO_TEXT, NODE_BG_COLOR, NODE_BORDER } from '../../utils/appConstants';
 
 export const TreeContainer = styled.div`
   display: flex;
@@ -7,9 +6,10 @@ export const TreeContainer = styled.div`
 `;
 
 export const Tree = styled.div`
-  border: solid 2px ${({ isDeepest }) => (!isDeepest ? NODE_BORDER : DEEPEST_NODE)};
+  border: solid 2px
+    ${({ isDeepest, theme }) => (!isDeepest ? theme.colors.nodeBorder : theme.colors.deepestNode)};
   border-radius: 8px;
-  background: ${NODE_BG_COLOR};
+  background: ${({ theme }) => theme.colors.nodeBgColor};
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -30,5 +30,5 @@ export const TreeRoot = styled.div`
 `;
 
 export const Info = styled.small`
-  color: ${INFO_TEXT};
+  color: ${({ theme }) => theme.colors.infoText};
 `;
