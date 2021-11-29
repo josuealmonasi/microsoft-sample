@@ -2,7 +2,7 @@
 
 This repo contains the solution to [this problems.](https://github.com/baskd/animated-garbanzo/blob/main/MWT_Frontline_Web_Screening.pdf)  
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-Please run  ```yarn install```  in the root directory to install modules.
+Please run `yarn install` in the root directory to install modules.
 
 ## Available Scripts
 
@@ -19,12 +19,13 @@ Runs the code for Problem1, the code for this problem is in that file and there 
 
 # Files
 
-The structure of the project is as follows: 
+The structure of the project is as follows:
+
 ![Tree of files](https://github.com/josuealmonasi/microsoft-sample/blob/main/files.png?raw=true)
 Folder components holds custom styled components, all the css in the app is provided using styled components, in such way that every component has its own folder and its own styled file like this:
-```--ComponentFolder```
-```|---Component.js```
-```|---styled.js```
+`--ComponentFolder`
+`|---Component.js`
+`|---styled.js`
 All the utilities such as theming and functions created as helpers are located in utils folder.
-![File Tree](https://github.com/josuealmonasi/microsoft-sample/blob/main/fileTree.png?raw=true)
 
+![File Tree](https://github.com/josuealmonasi/microsoft-sample/blob/main/fileTree.png?raw=true)
