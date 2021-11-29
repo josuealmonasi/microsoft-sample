@@ -50,6 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     color: ${({ theme }) => theme.colors.textColor};
     background-color: ${({ theme }) => theme.colors.bgColor};
+    transition: all 300ms ease-in-out;
   }
 
   input {

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { TabOutput, TabsContainer, TabsTitleContainer, TabsTitles } from './styled';
 
+/* This component can accept any child in any order */
 const Tabs = ({ children }) => {
   const [active, setActive] = useState(0);
 

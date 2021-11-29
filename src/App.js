@@ -10,6 +10,7 @@ import { GlobalStyle } from './utils/theme';
 import useTheme from './utils/custom/useTheme';
 import SwitchTheme from './components/ChangeThemeButton/SwitchTheme';
 import Footer from './components/Footer/Footer';
+import { TITLE } from './utils/appConstants';
 
 const App = () => {
   const { theme, switchTheme } = useTheme();
@@ -19,22 +20,25 @@ const App = () => {
   const [error, setError] = useState(false);
   const [selectedTheme, setSelectedTheme] = useState(theme);
 
+  /* Change theme handler */
   const handleSwitchTheme = () => {
     const themeName = theme.name;
+    /* Limited to only two modes for now */
     switchTheme(themeName === 'dark' ? 'light' : 'dark');
   };
 
   useEffect(() => {
     setSelectedTheme(theme);
+    /* Listen for any theme change */
   }, [theme]);
 
   return (
-    <ThemeProvider theme={{ ...selectedTheme }}>
+    <ThemeProvider theme={selectedTheme}>
       <GlobalStyle />
-      <AppContext.Provider
+      <AppContext.Provider /* Context */
         value={{ textToTree, settextToTree, isFile, setisFile, tree, setTree, error, setError }}>
         <SwitchTheme caption={theme.name} handleChange={handleSwitchTheme} />
-        <p>Process the input into a tree</p>
+        <p>{TITLE}</p>
         <InputArray />
         <p>
           <span>or</span>

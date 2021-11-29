@@ -6,6 +6,8 @@ import { TreeAsText } from './styled';
 const TreeOutput = () => {
   const { settextToTree, tree, setTree } = useContext(AppContext);
 
+  /* This allows the user to change any value directly from the JSON in the text area
+    and will be reflected in the input if this is a valid change */
   const handleOnChange = (e) => {
     try {
       const temporalTree = JSON.parse(e.target.value);

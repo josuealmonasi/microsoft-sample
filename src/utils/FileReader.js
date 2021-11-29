@@ -4,6 +4,7 @@ import { INVALID_FILE } from './appConstants';
 import { arrayToTree } from './arrayToTree';
 import { validateInput } from './validateArray';
 
+/* Simple utility to read valid json files */
 const FileReaderInput = () => {
   let fileReader;
 

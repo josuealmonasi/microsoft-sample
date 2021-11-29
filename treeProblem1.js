@@ -1,4 +1,4 @@
-/* This is the same code I use for the we app */
+/* This is the same code I use for the web app */
 const arrayToTree = (arr) => {
   if (arr === null) {
     return null;

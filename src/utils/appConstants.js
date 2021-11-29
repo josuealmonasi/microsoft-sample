@@ -7,3 +7,4 @@ export const EXAMPLE_CAPTION = 'Show me an example';
 export const FOOTER_CAPTION = 'Created with💙 by ';
 export const GH_USER = '@josuealmonasi';
 export const GH_REPO = 'https://github.com/josuealmonasi/microsoft-sample/';
+export const TITLE = 'Process the input into a tree';

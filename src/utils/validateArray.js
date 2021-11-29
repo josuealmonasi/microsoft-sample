@@ -5,6 +5,8 @@ export const validateInput = (arr) => {
   if (arr.length > 3) {
     return false;
   }
+  /* Fills the array  with nulls so the condition
+    above won't break when recursive */
   while (arr.length < 3) {
     arr.push(null);
   }

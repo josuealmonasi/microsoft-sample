@@ -28,7 +28,6 @@ export const TabsTitles = styled.div`
   margin: 10px 0 0 0;
   min-width: 40px;
   padding: 10px;
-  transition: border 300ms ease-in-out, background-color 300ms ease-in-out;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.infoBgColor};

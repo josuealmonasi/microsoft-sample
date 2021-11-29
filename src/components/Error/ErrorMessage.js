@@ -3,12 +3,14 @@ import { EXAMPLE_CAPTION, INVALID_INPUT } from '../../utils/appConstants';
 import HelpOverlay from './HelpOverlay';
 import { ErrorContainer, HelpButton } from './styled';
 
+/* Error message component */
 const ErrorMessage = () => {
   const [showHelp, setShowHelp] = useState(false);
 
   const handleShowHelp = () => {
     setShowHelp(!showHelp);
   };
+
   return (
     <ErrorContainer>
       <p>{INVALID_INPUT}</p>
