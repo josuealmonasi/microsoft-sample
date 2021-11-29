@@ -52,6 +52,10 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.bgColor};
   }
 
+  input {
+    max-width: 160px;
+  }
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }
