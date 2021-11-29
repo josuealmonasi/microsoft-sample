@@ -9,7 +9,7 @@ export const TabsContainer = styled.div`
   box-sizing: border-box;
   @media (max-width: ${({ theme }) => theme.responsive.mobile}) {
     width: 100%;
-    max-height: 70vh;
+    max-height: 75vh;
   }
 `;
 

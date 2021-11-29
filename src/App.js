@@ -17,7 +17,7 @@ const App = () => {
   const [textToTree, settextToTree] = useState('');
   const [isFile, setisFile] = useState(false);
   const [tree, setTree] = useState('');
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
   const [selectedTheme, setSelectedTheme] = useState(theme);
 
   /* Change theme handler */

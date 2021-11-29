@@ -41,6 +41,13 @@ export const themes = {
 };
 
 export const GlobalStyle = createGlobalStyle`
+  #root {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+  }
   body {
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
