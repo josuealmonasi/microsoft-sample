@@ -56,6 +56,11 @@ export const GlobalStyle = createGlobalStyle`
     max-width: 160px;
   }
 
+  a {
+    color: ${({ theme }) => theme.colors.textColor};
+    text-decoration: none;
+  }
+
   code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   }

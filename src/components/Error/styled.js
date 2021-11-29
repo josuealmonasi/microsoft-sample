@@ -19,12 +19,12 @@ export const HelpButton = styled.button`
 
 export const Overlay = styled.div`
   position: absolute;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   background: ${({ theme }) => theme.colors.overlayBgColor};
   top: 0;
+  bottom: 0;
   left: 0;
+  right: 0;
 `;
 
 export const OverlayContent = styled.div`

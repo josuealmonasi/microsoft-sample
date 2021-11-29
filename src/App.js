@@ -9,6 +9,7 @@ import Tabs from './components/Tabs/Tabs';
 import { GlobalStyle } from './utils/theme';
 import useTheme from './utils/custom/useTheme';
 import SwitchTheme from './components/ChangeThemeButton/SwitchTheme';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   const { theme, switchTheme } = useTheme();
@@ -47,6 +48,7 @@ const App = () => {
             </Tabs>
           </>
         )}
+        <Footer />
       </AppContext.Provider>
     </ThemeProvider>
   );
